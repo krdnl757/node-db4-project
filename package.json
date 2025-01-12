@@ -1,9 +1,22 @@
 {
   "name": "node-db4-project",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "migrate": "knew migrate:latest",
+    "rollback": "knew migrate:rollback",
+    "reset": "npm run rollback && npm run migrate && npm run seed",
+    "seed": "knew seed:run"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BloomInstituteOfTechnology/node-db4-project.git"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "knew": "^0.0.0",
+    "sqlite3": "^5.1.7"
   }
 }
